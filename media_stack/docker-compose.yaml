@@ -1,0 +1,112 @@
+---
+
+services:
+
+# jellyfin = TV & Movie content server, streams content to your clients
+  jellyfin:
+    image: lscr.io/linuxserver/jellyfin
+    container_name: jellyfin
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - VERSION=docker
+    volumes:
+      - /mnt/Storage/Media/movies:/data/movies
+      - /mnt/Storage/Media/tvshows:/data/tvshows
+      - /home/alex/docker/ContainerData/yams/Jellyfin:/config
+    ports:
+      - 8096:8096
+    restart: unless-stopped
+
+# jellyseerr = media requests, you & other users can add movies/tv to radarr/sonarr from a more user friendly interface that promotes content discovery
+    jellyseerr:
+       image: fallenbagel/jellyseerr:latest
+       container_name: jellyseerr
+       environment:
+            - LOG_LEVEL=debug
+            - TZ=America/New_York
+       ports:
+            - 5055:5055
+       volumes:
+            - /home/alex/docker/ContainerData/jellyseer/config:/app/config
+       restart: unless-stopped
+
+# qbittorent = torrent downloads
+  qbittorrent:
+    image: lscr.io/linuxserver/qbittorrent:latest
+    container_name: qbittorrent
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Americas/New_York
+      - WEBUI_PORT=8080
+    volumes:
+      - /home/alex/docker/ContainerData/yams/qBittorrent:/config
+      - /mnt/Storage/Media/downloads:/downloads
+    ports:
+      - 8080:8080
+      - 6881:6881
+      - 6881:6881/udp
+    restart: unless-stopped
+
+# Sonarr = TV show manager
+  sonarr:
+    image: lscr.io/linuxserver/sonarr
+    container_name: sonarr
+    environment:
+      - PUID=1000
+      - PGID=1000
+    volumes:
+      - /mnt/Storage/Media/tvshows:/tv
+      - /mnt/Storage/Media/downloads:/downloads
+      - /home/alex/docker/ContainerData/yams/sonarr:/config
+    ports:
+      - 8989:8989
+    restart: unless-stopped
+
+# Radarr = movie manager
+  radarr:
+    image: lscr.io/linuxserver/radarr
+    container_name: radarr
+    environment:
+      - PUID=1000
+      - PGID=1000
+    volumes:
+      - /mnt/Storage/Media/movies:/movies
+      - /mnt/Storage/Media/downloads:/downloads
+      - /home/alex/docker/ContainerData/yams/radarr:/config
+    ports:
+      - 7878:7878
+    restart: unless-stopped
+
+# Lidarr = music manager
+  lidarr:
+    image: lscr.io/linuxserver/lidarr
+    container_name: lidarr
+    environment:
+      - PUID=1000
+      - PGID=1000
+    volumes:
+      - /mnt/Storage/Media/music:/music
+      - /mnt/Storage/Media/downloads:/downloads
+      - /home/alex/docker/ContainerData/yams/lidarr:/config
+    ports:
+      - 8686:8686
+    restart: unless-stopped
+
+
+# Prowlarr = torrent indexer. Sonarr/Radarr use Prowlarr as a source to search for torrents to add to qbittorent
+
+  prowlarr:
+    image: lscr.io/linuxserver/prowlarr
+    container_name: prowlarr
+    environment:
+      - PUID=1000
+      - PGID=1000
+    volumes:
+      - /home/alex/docker/ContainerData/yams/prowlarr:/config
+    ports:
+      - 9696:9696
+    restart: unless-stopped
+
+  
