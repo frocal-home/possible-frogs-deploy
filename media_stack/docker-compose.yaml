@@ -1,6 +1,8 @@
 ---
 
 services:
+#comment out any services you don't plan to use
+
 
 # jellyfin = TV & Movie content server, streams content to your clients
   jellyfin:
@@ -18,7 +20,8 @@ services:
       - ${JELLY_PORT:-8096}:8096
     restart: unless-stopped
 
-# jellyseerr = media requests, you & other users can add movies/tv to radarr/sonarr from a more user friendly interface that promotes content discovery
+# jellyseerr = media requests, you & other users can add movies/tv to radarr/sonarr 
+# from a more user friendly interface that promotes content discovery
     jellyseerr:
        image: fallenbagel/jellyseerr:latest
        container_name: jellyseerr
@@ -95,7 +98,7 @@ services:
     restart: unless-stopped
 
 
-# Prowlarr = torrent indexer. Sonarr/Radarr use Prowlarr as a source to search for torrents to add to qbittorent
+# Prowlarr = torrent indexer. Sonarr/Radarr/Lidarr etc use Prowlarr as a source to search for torrents to add to qbittorent
   prowlarr:
     image: lscr.io/linuxserver/prowlarr
     container_name: prowlarr
