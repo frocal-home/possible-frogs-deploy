@@ -1,0 +1,42 @@
+#media directory variables (these will be used by multiple containers in the stack)
+MOVIES_DATA=/mnt/Storage/Media/movies
+TV_SHOWS_DATA=/mnt/Storage/Media/tvshows
+MUSIC_DATA=/mnt/Storage/Media/music
+DOWNLOADS_DATA=/mnt/Storage/Media/downloads
+
+#time zone variable (this will be used by multiple containers)
+TIME_ZONE=
+
+#jellyfin variables
+JELLYFIN_CONFIG=/home/alex/docker/ContainerData/yams/Jellyfin
+#if different port than default is desired, fill in next variable and uncomment line
+#JELLY_PORT=
+
+#jellyseer variables
+JELLYSEER_CONFIG=/home/alex/docker/ContainerData/jellyseer/config
+#if different port than default is desired, fill in next variable and uncomment line
+#JELLYSEER_PORT=
+
+
+#qbittorent variables
+QBITTORRENT_CONFIG=/home/alex/docker/ContainerData/yams/qBittorrent
+
+#sonarr variables
+SONARR_CONFIG=/home/alex/docker/ContainerData/yams/sonarr
+#if different port than default is desired, fill in next variable and uncomment line
+#SONARR_PORT=
+
+#radarr variables
+RADARR_CONFIG=/home/alex/docker/ContainerData/yams/radarr
+#if different port than default is desired, fill in next variable and uncomment line
+#RADARR_PORT=
+
+#lidarr variables
+LIDARR_CONFIG=/home/alex/docker/ContainerData/yams/lidarr
+#if different port than default is desired, fill in next variable and uncomment line
+#LIDARR_PORT=
+
+#prowlarr variables
+PROWLARR_CONFIG=/home/alex/docker/ContainerData/yams/prowlarr
+#if different port than default is desired, fill in next variable and uncomment line
+#PROWLARR_PORT=
