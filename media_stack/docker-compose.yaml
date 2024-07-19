@@ -111,4 +111,5 @@ services:
       - ${PROWLARR_PORT:-9696}:9696
     restart: unless-stopped
 
-  
+  env_file:
+  - media.env
