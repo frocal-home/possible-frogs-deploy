@@ -1,7 +1,8 @@
 ---
 services:
 
-  # Watchtower = updates container images
+# Watchtower = updates container images
+
   watchtower:
     image: containrrr/watchtower
     container_name: watchtower
