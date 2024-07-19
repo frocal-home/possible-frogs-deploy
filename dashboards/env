@@ -1,0 +1,18 @@
+TIME_ZONE=
+
+USER1=
+USER1_CONFIG=
+USER1_PORT=
+
+# the container specs below allow you to spin up additional heimdall dashboards 
+# such as for other users, a version with tailscale IPs for external access, etc. 
+# if these aren't needed, delete or comment out unneeded yaml below this point
+# you can also copy as needed to add more instances of heimdall
+
+USER2=
+USER2_CONFIG=
+USER2_PORT=
+
+USER3=
+USER3_CONFIG=
+USER3_PORT=
