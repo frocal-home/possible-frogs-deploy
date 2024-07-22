@@ -80,3 +80,6 @@ services:
       - ${YOUTUBEDL_PORT:-6061}:8081
     volumes:
       - ${YOUTUBEDL_DOWNLOADS}:/downloads
+      
+env_file:
+  - tools.env
