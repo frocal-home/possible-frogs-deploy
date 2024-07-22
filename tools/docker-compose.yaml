@@ -1,20 +1,18 @@
 ---
-
 services:
+  #comment out any services you don't plan to use
 
-#comment out any services you don't plan to use
-
-# Portainer = GUI to manage containers
-#  portainer:
-#    image: portainer/portainer-ce
-#    container_name: portainer
-#    ports:
-#      - ${PORTAINER_PORT:-9000}:9000
-#    volumes:
-#      - /etc/localtime:/etc/localtime:ro
-#      - /var/run/docker.sock:/var/run/docker.sock:ro
-#      - ${PORTAINER_CONFIG}:/data
-#   restart: unless-stopped
+  # Portainer = GUI to manage containers
+  #  portainer:
+  #    image: portainer/portainer-ce
+  #    container_name: portainer
+  #    ports:
+  #      - ${PORTAINER_PORT:-9000}:9000
+  #    volumes:
+  #      - /etc/localtime:/etc/localtime:ro
+  #      - /var/run/docker.sock:/var/run/docker.sock:ro
+  #      - ${PORTAINER_CONFIG}:/data
+  #   restart: unless-stopped
 
   duplicati:
     image: lscr.io/linuxserver/duplicati:latest
@@ -45,9 +43,9 @@ services:
       - ${FILEZILLA_CONFIG}:/config
       - ${STORAGE_PATH}:/Storage
     ports:
-      - ${FILEZILLA_PORT:-3000}:3000
+      - ${FILEZILLA_PORT:-3300}:3000
     restart: unless-stopped
-    
+
   resilio-sync:
     image: lscr.io/linuxserver/resilio-sync:latest
     container_name: resilio-sync
@@ -61,3 +59,24 @@ services:
     ports:
       - ${RESILIOSYNC_PORT:-8880}:8888
     restart: unless-stopped
+
+#follow https://github.com/JonathanTreffler/backblaze-personal-wine-container for setup instructions for backblaze container (below)
+  backblaze-personal-wine:
+    image: tessypowder/backblaze-personal-wine:latest
+    container_name: backblaze  
+    init: true
+    volumes:
+      - ${DATA_TO_BACKUP}:/drive_d/
+      - ${BACKBLAZE_CONFIG_DATA}:/config/
+    ports:
+      - ${BACKBLAZE_PORT:-8080}:5800
+    restart: unless-stopped
+
+  metube:
+    image: ghcr.io/alexta69/metube
+    container_name: youtube-dl
+    restart: unless-stopped
+    ports:
+      - ${YOUTUBEDL_PORT:-6061}:8081
+    volumes:
+      - ${YOUTUBEDL_DOWNLOADS}:/downloads
