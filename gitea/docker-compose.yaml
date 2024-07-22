@@ -41,5 +41,5 @@ services:
     volumes:
       - ${SQL_DB_LOCATION}:/var/lib/mysql
       
-env_file:
-  - gitea.env
+#env_file:
+#  - gitea.env
