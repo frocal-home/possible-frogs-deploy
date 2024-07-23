@@ -27,7 +27,7 @@ Install [docker](https://docs.docker.com/engine/install/) on your host machine..
 
 ## Method 2 (Portainer + Git):
 - Fork the repo 
-- Spin up a container for Portainer ([example here](https://github.com/ChristianLempa/boilerplates/blob/main/docker-compose/portainer/compose.yaml))
+- Spin up a container for Portainer ([portainer doc here](https://docs.portainer.io/start/install-ce/server/docker/linux))
 - Deploy from Stacks > Build Method > Repository
 
 
