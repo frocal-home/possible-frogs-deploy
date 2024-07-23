@@ -2,7 +2,7 @@
  
 docker-compose & env files for full homeserver setup
 
-includes: 
+## Includes: 
 
 - Media: Jellyfin & Jellyseer + Radarr, Sonarr, Lidarr, Prowlarr & Qbittorrent
 
@@ -15,16 +15,16 @@ includes:
 - Tools: Duplicati, Filezilla, Resilio Sync, Backblaze personal backup, youtube-dl
 
 
-if you're interested in deploying for yourself:
+# If you're interested in deploying for yourself:
 
-Install docker on your host machine... then:
+Install docker on your host machine... & then:
 
-Method 1: 
+## Method 1: 
 - Clone the repo, "fill out" the env files in each subfolder with your own info 
 - Then `cd` into each subfolder and run a `docker-compose up` command 
 - Recommend starting with *tools* as it includes Portainer, which can be helpful
 
-Method 2:
+## Method 2:
 - Fork the repo 
 - Spin up a container for Portainer (ref example: https://github.com/ChristianLempa/boilerplates/blob/main/docker-compose/portainer/compose.yaml)
 - Deploy from Stacks > Build Method > Repository
