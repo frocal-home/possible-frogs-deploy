@@ -31,5 +31,5 @@ Install [docker](https://docs.docker.com/engine/install/) on your host machine..
 - Deploy from Stacks > Build Method > Repository
 
 
-## In development:
+# In development:
 - script to automate some of method 1
