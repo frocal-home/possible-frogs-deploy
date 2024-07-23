@@ -20,7 +20,8 @@ docker-compose & env files for full homeserver setup
 Install [docker](https://docs.docker.com/engine/install/) on your host machine... & then:
 
 ## Method 1: 
-- Clone the repo, "fill out" the env files in each subfolder with your own info 
+- Clone the repo or download a .zip (green code button > download as zip, then unzip in a location of your choice)
+- "fill out" the env files in each subfolder with your own info using a text editor
 - Then `cd` into each subfolder and run a `docker compose up` command 
 - Recommend starting with *tools* as it includes Portainer, which can be helpful
 
