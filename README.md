@@ -1,6 +1,5 @@
-# homeserver-compose
- 
-docker-compose & env files for full homeserver setup
+
+ docker-compose & env files for full homeserver setup
 
 ## Includes: 
 
