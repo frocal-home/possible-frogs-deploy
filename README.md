@@ -30,3 +30,7 @@ Install [docker](https://docs.docker.com/engine/install/) on your host machine..
 - Fork the repo 
 - Spin up a container for Portainer (ref. example: https://github.com/ChristianLempa/boilerplates/blob/main/docker-compose/portainer/compose.yaml)
 - Deploy from Stacks > Build Method > Repository
+
+
+## In development:
+- script to automate some of method 1
