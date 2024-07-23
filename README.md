@@ -17,7 +17,7 @@ docker-compose & env files for full homeserver setup
 
 # If you're interested in deploying for yourself:
 
-Install [docker] (https://docs.docker.com/engine/install/) on your host machine... & then:
+Install [docker](https://docs.docker.com/engine/install/) on your host machine... & then:
 
 ## Method 1: 
 - Clone the repo, "fill out" the env files in each subfolder with your own info 
