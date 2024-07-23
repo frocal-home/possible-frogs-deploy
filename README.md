@@ -21,7 +21,7 @@ Install [docker](https://docs.docker.com/engine/install/) on your host machine..
 
 ## Method 1: 
 - Clone the repo, "fill out" the env files in each subfolder with your own info 
-- Then `cd` into each subfolder and run a `docker-compose up` command 
+- Then `cd` into each subfolder and run a `docker compose up` command 
 - Recommend starting with *tools* as it includes Portainer, which can be helpful
 
 ## Method 2:
