@@ -18,17 +18,17 @@
 
 Install [docker](https://docs.docker.com/engine/install/) on your host machine... & then:
 
-## Method 1 (Docker Compose): 
+## Method 1 (Portainer + Git, files were designed with this in mind):
+- Fork the repo 
+- Spin up a container for [Portainer](https://docs.portainer.io/start/install-ce/server/docker/linux)
+- Deploy from Stacks > Build Method > Repository
+
+## Method 2 (Docker Compose, more manual but little knowledge of Git or Portainer required): 
 - Clone the repo or download a .zip (green code button > download as zip, then unzip in a location of your choice)
 - "fill out" the env files in each subfolder with your own info using a text editor
 - Uncomment the lines as directed in the yaml files (look for "# uncomment lines below to deploy with docker-compose" in the files)
 - Then `cd` into each subfolder and run a `docker compose up` command 
 - Recommend starting with *tools* as it includes Portainer, which can be helpful
-
-## Method 2 (Portainer + Git):
-- Fork the repo 
-- Spin up a container for [Portainer](https://docs.portainer.io/start/install-ce/server/docker/linux)
-- Deploy from Stacks > Build Method > Repository
 
 
 # In development:
