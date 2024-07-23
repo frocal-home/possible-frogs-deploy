@@ -39,5 +39,6 @@ services:
       - ${USER3_PORT}:80
     restart: unless-stopped
 
-env_file:
-  - dashboards.env
+# uncomment lines below to deploy with docker-compose    
+#env_file:
+#  - dashboards.env

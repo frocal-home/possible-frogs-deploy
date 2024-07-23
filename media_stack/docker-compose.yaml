@@ -110,6 +110,6 @@ services:
       - ${PROWLARR_PORT:-9696}:9696
     restart: unless-stopped
 
-
-env_file:
-  - media.env
+# uncomment lines below to deploy with docker-compose    
+#env_file:
+#  - media.env

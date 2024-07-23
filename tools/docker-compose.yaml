@@ -85,6 +85,7 @@ services:
       - ${YOUTUBEDL_PORT:-6061}:8081
     volumes:
       - ${YOUTUBEDL_DOWNLOADS}:/downloads
-      
-env_file:
-  - tools.env
+  
+# uncomment lines below to deploy with docker-compose        
+#env_file:
+#  - tools.env

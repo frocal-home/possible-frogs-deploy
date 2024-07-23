@@ -15,6 +15,7 @@ services:
       - 8181:8181
       - 8081:8081
     restart: unless-stopped
-    
-env_file:
-  - books.env
+
+# uncomment lines below to deploy with docker-compose    
+# env_file:
+#  - books.env
