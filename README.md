@@ -19,13 +19,14 @@ docker-compose & env files for full homeserver setup
 
 Install [docker](https://docs.docker.com/engine/install/) on your host machine... & then:
 
-## Method 1: 
+## Method 1 (Docker Compose): 
 - Clone the repo or download a .zip (green code button > download as zip, then unzip in a location of your choice)
 - "fill out" the env files in each subfolder with your own info using a text editor
+- Uncomment the lines as directed in the yaml files (look for "# uncomment lines below to deploy with docker-compose" in the files)
 - Then `cd` into each subfolder and run a `docker compose up` command 
 - Recommend starting with *tools* as it includes Portainer, which can be helpful
 
-## Method 2:
+## Method 2 (Portainer + Git):
 - Fork the repo 
-- Spin up a container for Portainer (ref example: https://github.com/ChristianLempa/boilerplates/blob/main/docker-compose/portainer/compose.yaml)
+- Spin up a container for Portainer (ref. example: https://github.com/ChristianLempa/boilerplates/blob/main/docker-compose/portainer/compose.yaml)
 - Deploy from Stacks > Build Method > Repository
