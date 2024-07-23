@@ -32,4 +32,4 @@ Install [docker](https://docs.docker.com/engine/install/) on your host machine..
 
 
 # In development:
-- script to automate some of method 1
+- script to automate some of method 2
