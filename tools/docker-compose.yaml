@@ -17,7 +17,7 @@ services:
 #for local and/or cloud backup 
   duplicati:
     image: lscr.io/linuxserver/duplicati:latest
-    container_name: duplicati
+    container_name: duplicati_backup_tool
     environment:
       - PUID=1000
       - PGID=1000
@@ -34,7 +34,7 @@ services:
 #ftp client
   filezilla:
     image: lscr.io/linuxserver/filezilla:latest
-    container_name: filezilla
+    container_name: filezilla_ftp_client
     security_opt:
       - seccomp:unconfined #optional
     environment:
@@ -51,7 +51,7 @@ services:
 #sync folders between multiple computers
   resilio-sync:
     image: lscr.io/linuxserver/resilio-sync:latest
-    container_name: resilio-sync
+    container_name: resilio-sync-client
     environment:
       - PUID=1000
       - PGID=1000
@@ -67,7 +67,7 @@ services:
 #follow https://github.com/JonathanTreffler/backblaze-personal-wine-container for setup instructions for backblaze container (below)
   backblaze-personal-wine:
     image: tessypowder/backblaze-personal-wine:latest
-    container_name: backblaze  
+    container_name: backblaze-cloud-backup
     init: true
     volumes:
       - ${DATA_TO_BACKUP}:/drive_d/
@@ -79,7 +79,7 @@ services:
 #youtube-dl with a web interface
   metube:
     image: ghcr.io/alexta69/metube
-    container_name: youtube-dl
+    container_name: youtube-dl-webui
     restart: unless-stopped
     ports:
       - ${YOUTUBEDL_PORT:-6061}:8081
