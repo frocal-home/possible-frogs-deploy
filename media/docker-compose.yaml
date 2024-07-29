@@ -21,17 +21,17 @@ services:
 
 # jellyseerr = media requests, you & other users can add movies/tv to radarr/sonarr 
 # from a more user friendly interface that promotes content discovery
-    jellyseerr:
-       image: fallenbagel/jellyseerr:latest
-       container_name: jellyseer-request-manager
-       environment:
+#    jellyseerr:
+#       image: fallenbagel/jellyseerr:latest
+#       container_name: jellyseer-request-manager
+#       environment:
 #            - LOG_LEVEL=debug
-            - TZ=${TIME_ZONE}
-       ports:
-            - ${JELLYSEER_PORT:-5055}:5055
-       volumes:
-            - ${JELLYSEER_CONFIG}:/app/config
-       restart: unless-stopped
+#            - TZ=${TIME_ZONE}
+#       ports:
+#            - ${JELLYSEER_PORT:-5055}:5055
+#       volumes:
+#            - ${JELLYSEER_CONFIG}:/app/config
+#       restart: unless-stopped
 
 # qbittorent = torrent downloads
   qbittorrent:
