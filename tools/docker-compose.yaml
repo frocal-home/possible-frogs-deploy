@@ -87,7 +87,21 @@ services:
       - ${YOUTUBEDL_PORT:-6061}:8081
     volumes:
       - ${YOUTUBEDL_DOWNLOADS}:/downloads
-  
+      
+#nginx proxy manager
+  nginx:
+    image: docker.io/jc21/nginx-proxy-manager:latest
+    container_name: nginx-proxy-manager
+    restart: unless-stopped
+    ports:
+      - '80:80'
+      - '${NGINX_PM_PORT:-81}:81'
+      - '443:443'
+    volumes:
+      - ${NGINX_PM_CONFIG}:/config
+      - ${NGINX_PM_LETSENCRYPT_DATA}:/etc/letsencrypt
+      
+      
 # uncomment lines below to deploy with docker-compose        
 #env_file:
 #  - tools.env
