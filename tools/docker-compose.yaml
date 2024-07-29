@@ -60,7 +60,7 @@ services:
       - TZ=${TIME_ZONE}
     volumes:
       - ${RESILIO_SYNC_CONFIG}:/config
-      - ${STORAGE_PATH}:/storage
+      - ${STORAGE_PATH}:/sync
     ports:
       - ${RESILIOSYNC_PORT:-8880}:8888
     restart: unless-stopped
