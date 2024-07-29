@@ -5,10 +5,10 @@ services:
        container_name: jellyseerr
        environment:
             - LOG_LEVEL=debug
-            - TZ=America/New_York
+            - TZ=${TIME_ZONE}
        ports:
             - 5055:5055
        volumes:
-            - /home/alex/docker/ContainerData/jellyseer/config:/app/config
+            - ${JELLYSEER_CONFIG}:/app/config
        restart: unless-stopped
        
