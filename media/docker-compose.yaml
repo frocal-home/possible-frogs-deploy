@@ -25,7 +25,6 @@ services:
        image: fallenbagel/jellyseerr:latest
        container_name: jellyseer-request-manager
        environment:
-            - LOG_LEVEL=debug
             - TZ=${TIME_ZONE}
        ports:
             - ${JELLYSEER_PORT:-5055}:5055
