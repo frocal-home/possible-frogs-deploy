@@ -43,7 +43,7 @@ services:
       - TZ=${TIME_ZONE}
       - WEBUI_PORT=8080
     volumes:
-      - ${QBITTORENT_CONFIG}:/config
+      - ${QBITTORRENT_CONFIG}:/config
       - ${DOWNLOADS_DATA}:/downloads
     ports:
       - 8080:8080
