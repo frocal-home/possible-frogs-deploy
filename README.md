@@ -3,7 +3,9 @@
 
 ## Includes: 
 
-- Media: Jellyfin & Jellyseer + Radarr, Sonarr, Lidarr, Prowlarr & Qbittorrent
+- Media: Jellyfin + Radarr, Sonarr, Lidarr, Prowlarr & Qbittorrent
+
+- Jellyseer: contains only jellyseer, an optional user request platform for media
 
 - Books: Calibre, running the management interface on one port and the built in calibre webserver on another
 
