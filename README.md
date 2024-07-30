@@ -13,7 +13,7 @@
 
 - Gitea: A gitea container running in a stack with a mysql database
 
-- Tools: Duplicati, Filezilla, Resilio Sync, Backblaze personal backup, youtube-dl
+- Tools: Duplicati, Filezilla, Resilio Sync, Backblaze personal backup, youtube-dl, nginx proxy manager
 
 
 # If you're interested in deploying for yourself:
