@@ -6,7 +6,7 @@ services:
 # jellyfin = TV & Movie content server, streams content to your clients
   jellyfin:
     image: lscr.io/linuxserver/jellyfin
-    container_name: jellyfin-media-server
+    container_name: ${JELLYFIN_CONTAINER_NAME:-jellyfin-media-server}
     environment:
       - PUID=1000
       - PGID=1000
@@ -23,7 +23,7 @@ services:
 # from a more user friendly interface that promotes content discovery
 #    jellyseerr:
 #       image: fallenbagel/jellyseerr:latest
-#       container_name: jellyseer-request-manager
+#       container_name: ${JELLYSEER_CONTAINER_NAME:-jellyseer-request-manager}
 #       environment:
 #            - LOG_LEVEL=debug
 #            - TZ=${TIME_ZONE}
@@ -36,7 +36,7 @@ services:
 # qbittorent = torrent downloads
   qbittorrent:
     image: lscr.io/linuxserver/qbittorrent:latest
-    container_name: qbitt-downloads
+    container_name: ${QBITTORRENT_CONTAINER_NAME:-qbitt-downloads}
     environment:
       - PUID=1000
       - PGID=1000
@@ -54,7 +54,7 @@ services:
 # Sonarr = TV show manager
   sonarr:
     image: lscr.io/linuxserver/sonarr
-    container_name: sonarr-tv-manager
+    container_name: ${SONARR_CONTAINER_NAME:-sonarr-tv-manager}
     environment:
       - PUID=1000
       - PGID=1000
@@ -69,7 +69,7 @@ services:
 # Radarr = movie manager
   radarr:
     image: lscr.io/linuxserver/radarr
-    container_name: radarr-movie-manager
+    container_name: ${RADARR_CONTAINER_NAME:-radarr-movie-manager}
     environment:
       - PUID=1000
       - PGID=1000
@@ -84,7 +84,7 @@ services:
 # Lidarr = music manager
   lidarr:
     image: lscr.io/linuxserver/lidarr
-    container_name: lidarr-music-manager
+    container_name: ${LIDARR_CONTAINER_NAME:-lidarr-music-manager}
     environment:
       - PUID=1000
       - PGID=1000
@@ -100,7 +100,7 @@ services:
 # Prowlarr = torrent indexer. Sonarr/Radarr/Lidarr etc use Prowlarr as a source to search for torrents to add to qbittorent
   prowlarr:
     image: lscr.io/linuxserver/prowlarr
-    container_name: prowlarr-indexer
+    container_name: ${PROWLARR_CONTAINER_NAME:-prowlarr-indexer}
     environment:
       - PUID=1000
       - PGID=1000
@@ -110,6 +110,6 @@ services:
       - ${PROWLARR_PORT:-9696}:9696
     restart: unless-stopped
 
-# uncomment lines below to deploy with docker-compose    
-#env_file:
-#  - media.env
+
+env_file:
+  - stack.env
