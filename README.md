@@ -3,19 +3,21 @@
 
 ## Includes: 
 
-- Media: Jellyfin + Radarr, Sonarr, Lidarr, Prowlarr & Qbittorrent
+Base: 
 
-- Jellyseer: contains only jellyseer, an optional user request platform for media
+- Media: Jellyfin + Radarr, Sonarr, Lidarr, Prowlarr & Qbittorrent
 
 - Books: Calibre, running the management interface on one port and the built in calibre webserver on another
 
 - Dashboards: Running multiple instances of the heimdall dashboard (customizable for multiple users, external tailscale IPs, etc)
 
-- Gitea: A gitea container running in a stack with a mysql database
-
 - Tools: Duplicati, Filezilla, Resilio Sync, Backblaze personal backup, youtube-dl, nginx proxy manager
 
-- Watchtower: updates containers automatically (optional, you may not want to do this if you are worried about compatibility-breaking-updates, etc)
+Optional:
+
+- Jellyseer: jellyseer is a user request platform for media
+- Watchtower: updates containers automatically (you may not want to do this if you are worried about compatibility-breaking-updates, etc)
+- Gitea: A gitea container running in a stack with a mysql database
 
 
 # If you're interested in deploying for yourself:
